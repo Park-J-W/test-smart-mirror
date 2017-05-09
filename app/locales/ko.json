@@ -1,6 +1,6 @@
 {
     "home" : {
-        "commands" : "\"사용가능한 질문\""
+        "commands" : "\"메뉴\""
     },
     "traffic" : {
         "time_to" : "{{name}} 에 시간: "
@@ -39,11 +39,11 @@
         }
     },
     "commands": {
-        "title" : "사용 가능한 명령",
+        "title" : "메뉴",
         "list": {
-            "text": "사용가능한 질문",
-            "voice": "사용가능한 질문",
-            "description": "사용 가능한 질문\" 이라 말해 보세요\""
+            "text": "메뉴",
+            "voice": "메뉴",
+            "description": "메뉴\" 라고 말해 보세요\""
         },
         "home": {
             "text": "집",
@@ -101,8 +101,8 @@
             "description": "요청한 것의 사진을 보여 줍니다."
         },
         "video_stop": {
-            "text": "Stop video",
-            "voice": "stop (the) video",
+            "text": "영상 멈춰",
+            "voice": "영상 멈춰",
             "description": "Stops the playback of video content."
         },
         "image_giphy": {
@@ -111,8 +111,8 @@
             "description": "gif 이미지를 보여줍니다."
         },
         "image_comic": {
-            "text": "카툰 보고 싶어",
-            "voice": "카툰 보고 싶어",
+            "text": "카툰 보고싶어",
+            "voice": "카툰 보고싶어",
             "description": "카툰을 보여줍니다."
         },
         "image_comic_dilbert": {
@@ -131,9 +131,9 @@
             "description": "미리 알림리스트를 삭제 합니다."
         },
         "reminder_show": {
-            "text": "나에게 리콜 목록을 표시",
-            "voice": "나에게 리콜 목록을 표시",
-            "description": "리콜 목록을 표시합니다."
+            "text": "미리 알림 목록 표시",
+            "voice": "미리 알림 목록 표시",
+            "description": "미리알림 목록을 표시합니다."
         },
         "time_show": {
             "text": "지금 몇 시",
@@ -146,9 +146,9 @@
             "description": "*duration 타이머 (설정)."
         },
         "timer_show": {
-            "text": "타이머 보여줄래",
-            "voice": "타이머 보여줄래",
-            "description": "타이머 보여줄래."
+            "text": "타이머 보여 줄래",
+            "voice": "타이머 보여 줄래",
+            "description": "타이머 보여 줄래."
         },
         "timer_stop": {
             "text": "타이머 정지",
