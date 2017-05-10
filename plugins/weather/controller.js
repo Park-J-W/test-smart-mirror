@@ -49,8 +49,8 @@ function Weather($scope, $interval, $http, GeolocationService) {
 
 	function NaverTrans(summary) {
 		var NaverTranslator = require('naver-translator');
-		var clientId = '';
-		var clientSecret = '';
+		var clientId = config.naver_transe.id;
+		var clientSecret = config.naver_transe.key;
 		var credentials = {
 			client_id : clientId,
 			client_secret : clientSecret

@@ -83,6 +83,10 @@
     "todoist": {
         "key": ""
     },
+	"naver_transe": {
+	    "key": "",
+	    "id": ""
+	},
     "fitbit":{
       "timeout": 10000,
       "uris": {
