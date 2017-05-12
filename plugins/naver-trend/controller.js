@@ -1,9 +1,15 @@
-function Rss($scope, $http, $q, $interval) {
+function NaverTrend($scope, $http, $q, $interval) {
 
 	$scope.currentIndex = 0;
 	var rss = {};
 	rss.feed = [];
+	var trends = require('naver-trends');
+	var trendsRes = {};
 
+	trends.load(['hot'], function (err, result) {
+			  console.log(err, JSON.stringify(result))
+			  return trendsRes.result = result;
+	})
 	rss.get = function () {
 		rss.feed = [];
 		rss.updated = new moment().format('MMM DD, h:mm a');
@@ -20,7 +26,7 @@ function Rss($scope, $http, $q, $interval) {
 
 	var refreshNews = function () {
 		$scope.news = null;
-		rss.get().then(function (response) {
+		trends.load().then(function (response) {
             //For each feed
 			for (var i = 0; i < response.length; i++) {
 				for (var j = 0; j < response[i].data.query.results.rss.channel.item.length; j++) {

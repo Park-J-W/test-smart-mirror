@@ -22,8 +22,8 @@ function Weather($scope, $interval, $http, GeolocationService) {
 	function NaverTrans1(summary) {
 		var express = require('express');
 		var app = express();
-		var client_id = '';
-		var client_secret = '';
+		var client_id = config.naver_transe.id;
+		var client_secret = config.naver_transe.key;
 		var query = summary;
 
 		app.get('/translate', function (req, res) {
@@ -87,6 +87,7 @@ function Weather($scope, $interval, $http, GeolocationService) {
 		if (weather.forecast === null) {
 			return null;
 		}
+
 		return weather.forecast.data.minutely;
 	}
 
