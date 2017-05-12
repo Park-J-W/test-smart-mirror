@@ -69,7 +69,9 @@
       "trips" : []
     },
     "rss": {
-        "feeds" : [],
+        "feeds" : [
+			"http://news.yahoo.com/rss"
+		],
         "refreshInterval" : 120
     },
     "stock": {
@@ -84,8 +86,12 @@
         "key": ""
     },
 	"naver_transe": {
-	    "key": "",
-	    "id": ""
+	    "id": "",
+	    "key": ""
+	},
+	"naver_trend": {
+	    "id": "",
+	    "key": ""
 	},
     "fitbit":{
       "timeout": 10000,

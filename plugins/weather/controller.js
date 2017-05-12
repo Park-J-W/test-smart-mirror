@@ -11,11 +11,14 @@ function Weather($scope, $interval, $http, GeolocationService) {
             config.forecast.units + "&callback=JSON_CALLBACK")
 //            config.forecast.units + "&lang=" + language + "&callback=JSON_CALLBACK")
             .then(function (response) {
+		//NaverTrans(weather.forecast.data.daily.summary);
+//		response.data.daily.summary = NaverTrans(response.data.daily.summary);
+//					weather.forecast.data.hourly.summary
 	return weather.forecast = response;
 });
 	};
 
-
+	/*jwpark S*/
 	function NaverTrans1(summary) {
 		var express = require('express');
 		var app = express();
@@ -66,11 +69,19 @@ function Weather($scope, $interval, $http, GeolocationService) {
 		var callback = function (result) {
 			console.log(result);
 			gSummary = result;
-console.log('1111111 : ' + gSummary);
+			//gSummary = result;
+			//weather.forecast.data.daily.summary = result;
+			//console.log('1111111 : ' + weather.forecast.data.daily.summary);
 		};
 	
 		translator.translate(params, callback);
+/*
+		let kmaWeather = require('kma-js').Weather;
+		kmaWeather.townWeather('37.49543016888596', '127.03781811461468')
+			.then(data => console.log(data));
+*/
 	}
+	/*jwpark E*/
 
 	weather.minutelyForecast = function () {
 		if (weather.forecast === null) {
@@ -84,6 +95,7 @@ console.log('1111111 : ' + gSummary);
 		if (weather.forecast === null) {
 			return null;
 		}
+
 		weather.forecast.data.currently.day = moment.unix(weather.forecast.data.currently.time).format('ddd');
 		weather.forecast.data.currently.temperature = parseFloat(weather.forecast.data.currently.temperature).toFixed(0);
 		weather.forecast.data.currently.wi = "wi-forecast-io-" + weather.forecast.data.currently.icon;
@@ -95,11 +107,7 @@ console.log('1111111 : ' + gSummary);
 		if (weather.forecast === null) {
 			return null;
 		}
-		NaverTrans(weather.forecast.data.daily.summary);
-		console.error('weather.forecast.data.daily.summary : ' + weather.forecast.data.daily.summary);
-weather.forecast.data.daily.summary = gSummary;
-console.error('weather.forecast.data.daily.summary : ' + weather.forecast.data.daily.summary);
-console.error('gSummary : ' + gSummary);
+
         // Add human readable info to info
 		for (var i = 0; i < weather.forecast.data.daily.data.length; i++) {
 			weather.forecast.data.daily.data[i].day = moment.unix(weather.forecast.data.daily.data[i].time).format('ddd');
@@ -109,6 +117,7 @@ console.error('gSummary : ' + gSummary);
 			weather.forecast.data.daily.data[i].counter = String.fromCharCode(97 + i);
 			weather.forecast.data.daily.data[i].iconAnimation = weather.forecast.data.daily.data[i].icon;
 		}
+		console.log('weather.forecast.data.daily.summary : ' + weather.forecast.data.daily.summary);
 		
 		return weather.forecast.data.daily;
 	}
@@ -117,6 +126,8 @@ console.error('gSummary : ' + gSummary);
 		if (weather.forecast === null) {
 			return null;
 		}
+
+		console.error('weather.forecast.data.hourly.summary : ' + weather.forecast.data.hourly.summary);
 		weather.forecast.data.hourly.day = moment.unix(weather.forecast.data.hourly.time).format('ddd')
 		return weather.forecast.data.hourly;
 	}

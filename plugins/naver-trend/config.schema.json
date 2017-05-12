@@ -1,0 +1,26 @@
+{
+    "schema": {
+        "naver_trend": {
+            "type": "object",
+            "title": "naver_trend Settings",
+            "properties": {
+                "id": {
+                    "type": "string",
+					"title": "API id"
+                },
+                "key": {
+                    "type": "string",
+					"title": "API Key"
+                }
+            }
+        }
+    },
+    "form": [
+        {
+            "type": "fieldset",
+            "key": "naver_trend",
+            "expandable": true,
+            "order":0
+        }
+    ]
+}
