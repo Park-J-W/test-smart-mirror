@@ -1,16 +1,23 @@
 <div ng-controller="NaverTrend" class="trends">
     <div class="fade" ng-if="focus == 'default' && trends">
-        <div class="news-title dimmed fade">
-            <span><i class="fa fa-rss fade" style="margin-right: 5px";></i></span>
-            <span fade>Source: <span ng-bind="rss.title"></span>, Last Updated: <span ng-bind="rss.updated"></span></span>
+        <div class="real-title dimmed fade">
+            <span><i class="fa fa-trends fade" style="margin-right: 5px";></i></span>
+            <span fade>[NAVER] <span ng-bind="trends.title"></span></span>
         </div>
         <!--
         <div class="news-content fade" ng-repeat="article in rss.feed | limitTo : 1">
             <span class="fade" ng-bind="article.title"></span>
         </div>
         -->
-        <div class="news-content fade">
-            <span class="fade" ng-bind="rss.feed[currentIndex].title"></span>
+        <div class="real-content fade">
+            <span class="fade" ng-bind="trends.feed[NT_currentIndex].title"></span><br>
+            <span class="fade" ng-bind="trends.feed[NT_currentIndex+1].title"></span><br>
+            <span class="fade" ng-bind="trends.feed[NT_currentIndex+2].title"></span><br>
+            <span class="fade" ng-bind="trends.feed[NT_currentIndex+3].title"></span><br>
+            <span class="fade" ng-bind="trends.feed[NT_currentIndex+4].title"></span><br>
+	</div>
+	<div class="real-tail dimmed fade">
+            <span fade> Last Updated: <span ng-bind="trends.updated"></span></span><br>
         </div>
     </div>
 </div>

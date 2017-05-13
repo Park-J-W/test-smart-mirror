@@ -11,6 +11,16 @@
                 "key": {
                     "type": "string",
 					"title": "API Key"
+                },
+		"refreshInterval": {
+                    "type": "integer",
+                    "title": "Refresh Interval for Naver hot word (minutes)",
+                    "default": 1
+                },
+		"lineCount": {
+                    "type": "integer",
+                    "title": "Displyed count of NAVER hot word on the mirror.",
+                    "default": 5
                 }
             }
         }
