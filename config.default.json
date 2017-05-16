@@ -93,7 +93,9 @@
 	},
 	"naver_trend": {
 	    "id": "",
-	    "key": ""
+	    "key": "",
+		"refreshInterval": 3,
+		"lineCount": 5
 	},
     "fitbit":{
       "timeout": 10000,

@@ -184,6 +184,11 @@
             "text": "불 (흰/빨간/파란)색으로 (켜/꺼)줘",
             "voice": "불 :state *action (해)줘",
             "description": "불 :state *action (해)줘."
+        },
+        "read_news": {
+            "text": "뉴스 읽어 줘",
+            "voice": "뉴스 읽어 줘",
+            "description": "뉴스를 읽어 줍니다."
         }
     },
     "fitbit": {
