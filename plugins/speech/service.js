@@ -49,6 +49,10 @@ const {ipcRenderer} = require('electron');
 				callbacks.finalResult(text)
 				annyang.trigger(text)
 				callbacks.listening(false)
+
+				if(responsiveVoice.voiceSupport()) {
+					responsiveVoice.speak(text,"Korean Female")
+				}
 			})
 
 		}
