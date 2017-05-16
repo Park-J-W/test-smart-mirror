@@ -51,7 +51,8 @@
     "naver-translator": "^0.1.0",
     "socket.io": "^1.6.0",
     "sonus": "^0.1.7",
-    "naver-trends": "^0.1.1"
+    "naver-trends": "^0.1.1",
+    "googlenews-rss-scraper": "^1.0.2"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

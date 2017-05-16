@@ -1,43 +1,48 @@
 function Rss($scope, $http, $q, $interval) {
+	var iGoogleNewsRSSScraper = require('googlenews-rss-scraper');
 
 	$scope.currentIndex = 0;
 	var rss = {};
 	rss.feed = [];
 
-	rss.get = function () {
+	var refreshNews = function () {
 		rss.feed = [];
 		rss.updated = new moment().format('MMM DD, h:mm a');
-
-		if (typeof config.rss != 'undefined' && typeof config.rss.feeds != 'undefined') {
-			var promises = [];
-			angular.forEach(config.rss.feeds, function (url) {
-				promises.push($http.jsonp('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20\'' + encodeURIComponent(url) + '\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK'));
-			});
-
-			return $q.all(promises)
-		}
-	};
-
-	var refreshNews = function () {
+		rss.title = '[ GooGle News Rss ]';
 		$scope.news = null;
-		rss.get().then(function (response) {
-            //For each feed
-			for (var i = 0; i < response.length; i++) {
-				for (var j = 0; j < response[i].data.query.results.rss.channel.item.length; j++) {
-					var feedEntry = {
-						title: response[i].data.query.results.rss.channel.item[j].title,
-                        //content: response[i].data.query.results.rss.channel.item[j].description[0],
-					};
+
+		iGoogleNewsRSSScraper.getGoogleNewsRSSScraperData( { newsType: config.rss.newsType, newsTypeTerms: config.rss.newsTypeTerms}, function(data) {
+			if (!data.error) {
+//				console.log(JSON.stringify(data, null, 2));    
+				//For each feed
+				var response = data.newsArray;
+
+				console.log('response.length : ' + response.length);
+				console.log('data.length.newsArray : ' + data.newsArray.length);
+
+	            for (var i = 0; i < response.length; i++) {
+				console.log('response[i]..cleanDescription : ' + response[i].cleanDescription);
+					var feedEntry = { 
+							title: response[i].title,
+							source: response[i].source,
+							pubDate : response[i].pubDate,
+							cleanDescription : response[i].cleanDescription,
+							//content: response[i].data.query.results.rss.channel.item[j].description[0],
+					};  
+					rss.srouce = response[i].source;
 					rss.feed.push(feedEntry);
 				}
+				$scope.currentIndex = 0;
+				$scope.rss = rss;
 			}
-			$scope.currentIndex = 0;
-			$scope.rss = rss;
-		});
+			else {
+				console.log('Some error occured.');
+			}
+		}); 
 	};
 
 	var cycleNews = function(){
-		$scope.currentIndex = ($scope.currentIndex >= $scope.rss.feed.length)? 0: $scope.currentIndex + 1;
+		$scope.currentIndex = ($scope.currentIndex >= $scope.rss.feed.length - 1)? 0: $scope.currentIndex + 1;
 	}
 
 	if (typeof config.rss !== 'undefined' && typeof config.rss.feeds != 'undefined') {

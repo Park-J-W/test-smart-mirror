@@ -72,7 +72,9 @@
         "feeds" : [
 			"http://news.yahoo.com/rss"
 		],
-        "refreshInterval" : 120
+        "refreshInterval" : 10,
+		"newsType": "",
+		"newsTypeTerms": ""
     },
     "stock": {
         "names": []

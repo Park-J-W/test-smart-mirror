@@ -1,8 +1,7 @@
 <div ng-controller="Rss" class="news">
     <div class="fade" ng-if="focus == 'default' && rss">
-        <div class="news-title dimmed fade">
-            <span><i class="fa fa-rss fade" style="margin-right: 5px";></i></span>
-            <span fade>Source: <span ng-bind="rss.title"></span>, Last Updated: <span ng-bind="rss.updated"></span></span>
+        <div class="news-head dimmed fade">
+            <span class="fade"> [ <span ng-bind="rss.feed[currentIndex].source"></span> ] - <span ng-bind="rss.feed[currentIndex].pubDate"></span> </span>
         </div>
         <!--
         <div class="news-content fade" ng-repeat="article in rss.feed | limitTo : 1">
@@ -10,7 +9,16 @@
         </div>
         -->
         <div class="news-content fade">
-            <span class="fade" ng-bind="rss.feed[currentIndex].title"></span>
+            <span class="fade" ng-bind="rss.feed[currentIndex].title"></span><br>
         </div>
+        <div class="news-title dimmed fade">
+            <span><i class="fa fa-rss fade" style="margin-right: 5px";></i></span>
+            <span fade>Soruce: <span ng-bind="rss.title"></span>, Last Updated: <span ng-bind="rss.updated"></span></span>
+        </div>
+		<!--
+        <div class="news-discription fade">
+            <span class="fade" ng-bind="rss.feed[currentIndex].cleanDescription"></span>
+        </div>
+		-->
     </div>
 </div>

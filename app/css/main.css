@@ -517,7 +517,13 @@ ul.calendar {
 }
 
 .news {
-    height: 75px;
+    height: 85px;
+    margin-bottom: 5px;
+}
+
+.news-head {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
     margin-bottom: 5px;
 }
 
@@ -530,7 +536,7 @@ ul.calendar {
 .news-content {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    margin-bottom: 55px;
+    margin-bottom: 8px;
 }
 .real {
     height: 75px;

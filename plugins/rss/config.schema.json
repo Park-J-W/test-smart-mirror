@@ -14,8 +14,18 @@
                 "refreshInterval": {
                     "type": "integer",
                     "title": "Refresh Interval for RSS Feeds (minutes)",
-                    "default": 9
-                }
+                    "default": 10
+                },
+				"newsType": {
+					"type": "string",
+					"title": "News Type",
+					"default": "TOPIC"
+				},
+				"newsTypeTerms": {
+					"type": "string",
+					"title": "News Type Terms",
+					"default": "HEADLINES"
+				}
             }
         }
     },
