@@ -118,7 +118,7 @@ function Weather($scope, $interval, $http, GeolocationService) {
 			weather.forecast.data.daily.data[i].counter = String.fromCharCode(97 + i);
 			weather.forecast.data.daily.data[i].iconAnimation = weather.forecast.data.daily.data[i].icon;
 		}
-		console.log('weather.forecast.data.daily.summary : ' + weather.forecast.data.daily.summary);
+		//console.log('weather.forecast.data.daily.summary : ' + weather.forecast.data.daily.summary);
 		
 		return weather.forecast.data.daily;
 	}
@@ -128,7 +128,7 @@ function Weather($scope, $interval, $http, GeolocationService) {
 			return null;
 		}
 
-		console.error('weather.forecast.data.hourly.summary : ' + weather.forecast.data.hourly.summary);
+		//console.error('weather.forecast.data.hourly.summary : ' + weather.forecast.data.hourly.summary);
 		weather.forecast.data.hourly.day = moment.unix(weather.forecast.data.hourly.time).format('ddd')
 		return weather.forecast.data.hourly;
 	}
