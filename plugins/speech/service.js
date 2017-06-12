@@ -51,7 +51,7 @@ const {ipcRenderer} = require('electron');
 				callbacks.listening(false)
 
 				if(responsiveVoice.voiceSupport()) {
-					responsiveVoice.speak(text,"Korean Female")
+					responsiveVoice.speak(text, config.responsive.voiceType)
 				}
 			})
 

@@ -68,7 +68,7 @@ function Rss($scope, $http, $q, $interval, SpeechService, Focus) {
 		setTimeout(function () {
 			console.log('rss.feed[i].title : ' + rss.briefing);
 			if(responsiveVoice.voiceSupport()) {
-				responsiveVoice.speak(rss.briefing,"Korean Female");
+				responsiveVoice.speak(rss.briefing, config.responsive.voiceType);
 				//responsiveVoice.speak("다음 뉴스 입니다.","Korean Female");
 			}
 		}, 2000);

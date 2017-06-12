@@ -20,7 +20,7 @@
      "pin": "GPIO26"
   },
   "speech": {
-    "keyFilename": "",
+    "keyFilename": "./keyfile.json",
     "hotwords": [
       {
         "keyword": "smart mirror",
@@ -30,6 +30,9 @@
     "sensitivity": "0.5",
     "continuous": false
   },
+	"responsive" : {
+		"voiceType": "Korean Female"
+	},
     "forecast" : {
         "key" : "",
         "units" : "auto",
